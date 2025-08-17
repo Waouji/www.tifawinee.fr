@@ -1,340 +1,384 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tifawinee — Abayas & vêtements modestes</title>
-  <meta name="description" content="Tifawinee : Abayas, robes, jilbabs et hijabs élégants pour femmes musulmanes. Qualité, confort, pudeur. Livraison France & Tunisie. Commande par WhatsApp.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧕</text></svg>">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ["Inter","ui-sans-serif","system-ui","sans-serif"] },
-          colors: { brand: { 50:"#f5f7fb",100:"#e9eef6",200:"#cfdaf0",300:"#a9c0e6",400:"#7a9ad6",500:"#4f73c3",600:"#3f5ca1",700:"#344b81",800:"#2b3f6a",900:"#24365a" } }
-        }
-      }
-    }
-  </script>
-  <style>
-    .soft{ box-shadow:0 8px 30px rgba(0,0,0,.07) }
-    .glass{ backdrop-filter:blur(8px); background:rgba(255,255,255,.75) }
-  </style>
-</head>
-<body class="font-sans text-slate-800 bg-slate-50">
-  <!-- Header -->
-  <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/90 glass">
-    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
-      <a href="#" class="text-xl font-bold tracking-tight">Tifawinee</a>
-      <nav class="hidden md:flex items-center gap-6">
-        <a href="#catalogue" class="hover:text-brand-700">Collection</a>
-        <a href="#tailles" class="hover:text-brand-700">Tailles</a>
-        <a href="#contact" class="hover:text-brand-700">Contact</a>
-      </nav>
-      <div class="flex items-center gap-3">
-        <button id="openCart" class="relative rounded-xl border px-4 py-2 hover:bg-white transition">
-          Panier
-          <span data-cart-badge class="hidden absolute -right-2 -top-2 text-xs bg-slate-900 text-white rounded-full px-1.5 py-0.5">0</span>
-        </button>
-        <a href="https://wa.me/33600000000" target="_blank" class="inline-flex items-center rounded-xl bg-brand-700 px-4 py-2 text-white hover:bg-brand-800 transition">
-          WhatsApp
-        </a>
-      </div>
-    </div>
-  </header>
+{\rtf1\ansi\ansicpg1252\cocoartf2818
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-  <!-- Hero -->
-  <section class="mx-auto max-w-7xl px-4 pt-10 pb-8">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <div>
-        <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight">
-          Abayas & vêtements modestes<br class="hidden sm:block"> élégants du quotidien
-        </h1>
-        <p class="mt-3 text-slate-600">Coupes fluides, matières sélectionnées et finitions soignées. Expédition France & Tunisie.</p>
-        <div class="mt-5 flex gap-3">
-          <a href="#catalogue" class="rounded-xl bg-slate-900 text-white px-5 py-3 hover:bg-slate-800 transition">Voir la collection</a>
-          <a href="https://wa.me/33600000000" target="_blank" class="rounded-xl border border-slate-300 px-5 py-3 hover:bg-white transition">Commander par WhatsApp</a>
-        </div>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="text-xs px-3 py-1 rounded-full bg-white border">Abayas</span>
-          <span class="text-xs px-3 py-1 rounded-full bg-white border">Robes</span>
-          <span class="text-xs px-3 py-1 rounded-full bg-white border">Jilbabs</span>
-          <span class="text-xs px-3 py-1 rounded-full bg-white border">Hijabs</span>
-        </div>
-      </div>
-      <div class="rounded-3xl overflow-hidden soft">
-        <img src="https://images.unsplash.com/photo-1520974859131-5a6a1c01f27c?q=80&w=1400&auto=format&fit=crop" alt="Collection Tifawinee" class="w-full h-[320px] object-cover">
-      </div>
-    </div>
-  </section>
-
-  <!-- Filtres + Catalogue -->
-  <section id="catalogue" class="mx-auto max-w-7xl px-4 pb-14">
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-      <h2 class="text-2xl font-bold">Nouvelle collection</h2>
-      <div class="flex gap-2">
-        <button data-filter="all"   class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Tout</button>
-        <button data-filter="abaya" class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Abayas</button>
-        <button data-filter="robe"  class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Robes</button>
-        <button data-filter="jilbab"class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Jilbabs</button>
-        <button data-filter="hijab" class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Hijabs</button>
-      </div>
-    </div>
-
-    <div id="grid" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
-    <p class="mt-3 text-sm text-slate-500">Astuce : remplace les photos par tes images (place-les dans <code>/assets</code> et édite les produits dans le script en bas).</p>
-  </section>
-
-  <!-- Tailles -->
-  <section id="tailles" class="mx-auto max-w-7xl px-4 pb-14">
-    <div class="rounded-2xl bg-white border soft p-6">
-      <h2 class="text-2xl font-bold mb-2">Guide des tailles</h2>
-      <p class="text-slate-600 mb-4">Coupe ample et fluide. Si tu hésites entre deux tailles, choisis la plus grande.</p>
-      <div class="grid sm:grid-cols-3 gap-4 text-sm">
-        <div class="p-4 border rounded-xl">
-          <div class="font-semibold mb-1">Abayas</div>
-          <p>34–52 • Longueurs 135/140 cm</p>
-        </div>
-        <div class="p-4 border rounded-xl">
-          <div class="font-semibold mb-1">Robes</div>
-          <p>XS–XXL • Coupe évasée</p>
-        </div>
-        <div class="p-4 border rounded-xl">
-          <div class="font-semibold mb-1">Jilbabs/Hijabs</div>
-          <p>Taille unique • Plusieurs coloris</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="mx-auto max-w-7xl px-4 pb-20">
-    <div class="rounded-2xl bg-white border soft p-6">
-      <h2 class="text-2xl font-bold mb-2">Contact</h2>
-      <p class="text-slate-600">Email : <a class="underline" href="mailto:contact@tifawinee.fr">contact@tifawinee.fr</a></p>
-      <p class="text-slate-600">WhatsApp : <a class="underline" href="https://wa.me/33600000000" target="_blank">+33 6 00 00 00 00</a></p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t bg-white">
-    <div class="mx-auto max-w-7xl px-4 py-8 text-sm text-slate-500 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
-      <span>© <span id="y"></span> Tifawinee — Tous droits réservés</span>
-      <div class="flex gap-4">
-        <a href="#catalogue" class="hover:text-slate-700">Collection</a>
-        <a href="#tailles" class="hover:text-slate-700">Tailles</a>
-        <a href="#contact" class="hover:text-slate-700">Contact</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- POPUP PANIER -->
-  <div id="cartModal" class="fixed inset-0 hidden">
-    <div class="absolute inset-0 bg-black/40" aria-hidden="true"></div>
-    <div class="relative mx-auto max-w-3xl bg-white rounded-2xl soft mt-10 md:mt-20 overflow-hidden">
-      <div class="flex items-center justify-between px-5 py-4 border-b">
-        <h3 class="text-lg font-semibold">Mon panier</h3>
-        <button id="closeCart" class="rounded-lg px-2 py-1 hover:bg-slate-100">✕</button>
-      </div>
-      <div class="p-4">
-        <div id="empty" class="hidden rounded-xl border bg-white p-6 text-slate-600">
-          Votre panier est vide. <a class="underline" href="#catalogue" id="closeAndShop">Voir la collection</a>.
-        </div>
-
-        <div id="cartBox" class="rounded-xl border bg-white overflow-hidden hidden">
-          <table class="w-full text-sm">
-            <thead class="bg-slate-100">
-              <tr>
-                <th class="text-left p-3">Produit</th>
-                <th class="text-left p-3">Prix</th>
-                <th class="text-left p-3">Qté</th>
-                <th class="text-left p-3">Sous-total</th>
-                <th class="p-3"></th>
-              </tr>
-            </thead>
-            <tbody id="rows"></tbody>
-          </table>
-          <div class="flex items-center justify-between p-4 border-t">
-            <button id="clear" class="text-sm underline">Vider le panier</button>
-            <div class="text-right">
-              <div class="text-slate-600 text-sm">Total</div>
-              <div id="total" class="text-xl font-semibold">—</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-4 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-          <button id="continue" class="rounded-xl border px-4 py-2 bg-white">← Continuer mes achats</button>
-          <button id="wa" class="rounded-xl bg-green-600 text-white px-4 py-2 hover:bg-green-700">Commander sur WhatsApp</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SCRIPTS : Produits + Panier + Rendu -->
-  <script>
-    // ------------ CONFIG ------------
-    const WHATSAPP_NUMBER = "33600000000"; // ← remplace par ton numéro (international, sans +)
-
-    // ------------ DONNÉES PRODUITS (modifie ici) ------------
-    const PRODUCTS = [
-      { id:"abaya-classique",  title:"Abaya Classique",       subtitle:"Noir • du 34 au 50", price:"49,00 €", category:"abaya", image:"https://images.unsplash.com/photo-1532767153582-b1a0e5145009?q=80&w=1200&auto=format&fit=crop" },
-      { id:"abaya-crepe",      title:"Abaya Crêpe Premium",   subtitle:"Beige • du 36 au 52", price:"59,00 €", category:"abaya", image:"https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1200&auto=format&fit=crop" },
-      { id:"robe-evasee",      title:"Robe Évasée",           subtitle:"S-XXL • 4 coloris",   price:"39,00 €", category:"robe",  image:"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop" },
-      { id:"jilbab-2p",        title:"Jilbab 2 pièces",       subtitle:"Taille unique",       price:"45,00 €", category:"jilbab",image:"https://images.unsplash.com/photo-1544717305-996b815c338c?q=80&w=1200&auto=format&fit=crop" },
-      { id:"hijab-mousseline", title:"Hijab Mousseline",      subtitle:"Couleurs variées",    price:"12,00 €", category:"hijab", image:"https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop" },
-      { id:"abaya-satin",      title:"Abaya Satin",           subtitle:"Vert olive • 34–48",  price:"65,00 €", category:"abaya", image:"https://images.unsplash.com/photo-1520975891768-1c1ef2d7f2c6?q=80&w=1200&auto=format&fit=crop" }
-    ];
-
-    // ------------ PANIER (localStorage) ------------
-    const CART_KEY = "tifawinee_cart_v1";
-    const lsGet = k => { try{ return JSON.parse(localStorage.getItem(k))||[] }catch{ return [] } };
-    const lsSet = (k,v) => localStorage.setItem(k, JSON.stringify(v));
-
-    function loadCart(){ return lsGet(CART_KEY); }
-    function saveCart(c){ lsSet(CART_KEY,c); updateCartBadge(); }
-    function addToCart(p,qty=1){
-      const c=loadCart(); const i=c.findIndex(x=>x.id===p.id);
-      if(i>=0) c[i].qty+=qty; else c.push({id:p.id,title:p.title,price:p.price,image:p.image,qty});
-      saveCart(c);
-    }
-    function removeFromCart(id){ saveCart(loadCart().filter(i=>i.id!==id)); }
-    function setQty(id,qty){ const c=loadCart(); const it=c.find(i=>i.id===id); if(!it) return; it.qty=Math.max(1,qty|0); saveCart(c); }
-    function clearCart(){ saveCart([]); }
-    function cartCount(){ return loadCart().reduce((n,i)=>n+i.qty,0); }
-    function parsePrice(p){ const n=(p+"").replace(/[^\d,.-]/g,"").replace(",","."); return parseFloat(n||"0"); }
-    function formatPrice(n){ return new Intl.NumberFormat("fr-FR",{style:"currency",currency:"EUR"}).format(n); }
-    function cartTotal(){ return loadCart().reduce((s,i)=>s+parsePrice(i.price)*i.qty,0); }
-    function updateCartBadge(){
-      const el=document.querySelector("[data-cart-badge]");
-      if(!el) return; const n=cartCount(); el.textContent=n; el.classList.toggle("hidden", n===0);
-    }
-    function buildWhatsAppText(){
-      const c=loadCart(); if(!c.length) return "Bonjour, je souhaite passer une commande.";
-      const lines=["Salam/Bonjour, je souhaite commander :",""];
-      c.forEach((i,k)=>lines.push(`${k+1}. ${i.title} ×${i.qty} — ${i.price}`));
-      lines.push("",`Total : ${formatPrice(cartTotal())}`,"","Nom :","Adresse de livraison :","Téléphone :");
-      return lines.join("\n");
-    }
-    function openWhatsAppWithCart(){
-      const txt=encodeURIComponent(buildWhatsAppText());
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${txt}`,"_blank");
-    }
-
-    // ------------ RENDU CATALOGUE ------------
-    const grid=document.getElementById("grid");
-    let currentFilter="all";
-    function render(products){
-      grid.innerHTML="";
-      products.filter(p=>currentFilter==="all" ? true : p.category===currentFilter).forEach(p=>{
-        const card=document.createElement("article");
-        card.className="bg-white border rounded-2xl overflow-hidden soft flex flex-col";
-        card.innerHTML=`
-          <img src="${p.image}" alt="${p.title}" class="w-full h-56 object-cover">
-          <div class="p-4 flex-1 flex flex-col">
-            <h3 class="font-semibold">${p.title}</h3>
-            <p class="text-sm text-slate-600 mt-1">${p.subtitle}</p>
-            <div class="mt-auto flex items-center justify-between pt-3 gap-2">
-              <span class="font-semibold">${p.price}</span>
-              <div class="flex gap-2">
-                <button class="add-btn rounded-xl bg-slate-900 text-white px-3 py-1.5 text-sm hover:bg-slate-800" data-id="${p.id}">Ajouter</button>
-                <a class="text-sm underline hover:no-underline" target="_blank"
-                   href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Bonjour, je veux "+p.title+" ("+p.price+")")}">
-                  Achat direct
-                </a>
-              </div>
-            </div>
-          </div>`;
-        grid.appendChild(card);
-      });
-      document.querySelectorAll(".add-btn").forEach(btn=>{
-        btn.addEventListener("click", ()=>{
-          const id=btn.getAttribute("data-id");
-          const prod=PRODUCTS.find(x=>x.id===id);
-          if(prod){ addToCart(prod,1); btn.textContent="Ajouté ✓"; setTimeout(()=>btn.textContent="Ajouter",900); }
-        });
-      });
-    }
-
-    // ------------ FILTRES ------------
-    document.querySelectorAll(".filter-btn").forEach(btn=>{
-      btn.addEventListener("click",()=>{
-        document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("bg-slate-900","text-white"));
-        btn.classList.add("bg-slate-900","text-white");
-        currentFilter=btn.dataset.filter; render(PRODUCTS);
-      });
-    });
-
-    // ------------ POPUP PANIER ------------
-    const cartModal=document.getElementById("cartModal");
-    const openCart=document.getElementById("openCart");
-    const closeCart=document.getElementById("closeCart");
-    const continueBtn=document.getElementById("continue");
-    const closeAndShop=document.getElementById("closeAndShop");
-    const rows=document.getElementById("rows");
-    const empty=document.getElementById("empty");
-    const cartBox=document.getElementById("cartBox");
-    const totalEl=document.getElementById("total");
-    const waBtn=document.getElementById("wa");
-    const clearBtn=document.getElementById("clear");
-
-    function renderCart(){
-      const cart=loadCart();
-      if(!cart.length){
-        empty.classList.remove("hidden");
-        cartBox.classList.add("hidden");
-        totalEl.textContent="0 €";
-      }else{
-        empty.classList.add("hidden");
-        cartBox.classList.remove("hidden");
-        rows.innerHTML="";
-        cart.forEach(item=>{
-          const tr=document.createElement("tr");
-          const sub=parsePrice(item.price)*item.qty;
-          tr.className="border-b";
-          tr.innerHTML=`
-            <td class="p-3">
-              <div class="flex items-center gap-3">
-                <img src="${item.image}" class="w-14 h-14 object-cover rounded-lg border" alt="">
-                <div><div class="font-medium">${item.title}</div><div class="text-xs text-slate-500">${item.id}</div></div>
-              </div>
-            </td>
-            <td class="p-3">${item.price}</td>
-            <td class="p-3"><input data-qty="${item.id}" type="number" min="1" value="${item.qty}" class="w-16 rounded border px-2 py-1"></td>
-            <td class="p-3 font-medium">${formatPrice(sub)}</td>
-            <td class="p-3 text-right"><button data-del="${item.id}" class="text-sm text-red-600 hover:underline">Supprimer</button></td>
-          `;
-          rows.appendChild(tr);
-        });
-        totalEl.textContent=formatPrice(cartTotal());
-        rows.querySelectorAll("[data-qty]").forEach(input=>{
-          input.addEventListener("change",()=>{
-            setQty(input.getAttribute("data-qty"), parseInt(input.value,10));
-            renderCart();
-          });
-        });
-        rows.querySelectorAll("[data-del]").forEach(btn=>{
-          btn.addEventListener("click",()=>{ removeFromCart(btn.getAttribute("data-del")); renderCart(); });
-        });
-      }
-    }
-
-    function openCartModal(){ cartModal.classList.remove("hidden"); renderCart(); }
-    function closeCartModal(){ cartModal.classList.add("hidden"); }
-
-    openCart.addEventListener("click", openCartModal);
-    closeCart.addEventListener("click", closeCartModal);
-    continueBtn.addEventListener("click", closeCartModal);
-    if(closeAndShop) closeAndShop.addEventListener("click", closeCartModal);
-    clearBtn.addEventListener("click", ()=>{ clearCart(); renderCart(); });
-    waBtn.addEventListener("click", openWhatsAppWithCart);
-    document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeCartModal(); });
-
-    // ------------ INIT ------------
-    document.getElementById("y").textContent=new Date().getFullYear();
-    updateCartBadge();
-    render(PRODUCTS);
-  </script>
-</body>
-</html>
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="fr">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Tifawinee - Mode Modeste & \'c9l\'e9gante</title>\
+    <style>\
+        /* --- Importation des Polices Google --- */\
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;700&display=swap');\
+\
+        /* --- Variables de Design --- */\
+        :root \{\
+            --color-background: #FDFBF8; /* Blanc cass\'e9 */\
+            --color-text: #333333; /* Gris anthracite */\
+            --color-primary: #D27D5D; /* Terracotta doux */\
+            --font-title: 'Lora', serif;\
+            --font-body: 'Montserrat', sans-serif;\
+        \}\
+\
+        /* --- R\'e9initialisation et Styles Globaux --- */\
+        * \{\
+            box-sizing: border-box;\
+            margin: 0;\
+            padding: 0;\
+        \}\
+\
+        body \{\
+            font-family: var(--font-body);\
+            background-color: var(--color-background);\
+            color: var(--color-text);\
+            line-height: 1.6;\
+        \}\
+\
+        .container \{\
+            width: 90%;\
+            max-width: 1200px;\
+            margin: 0 auto;\
+        \}\
+\
+        h1, h2, h3 \{\
+            font-family: var(--font-title);\
+            font-weight: 400;\
+        \}\
+\
+        a \{\
+            text-decoration: none;\
+            color: var(--color-text);\
+            transition: color 0.3s ease;\
+        \}\
+\
+        a:hover \{\
+            color: var(--color-primary);\
+        \}\
+\
+        /* --- En-t\'eate (Header) --- */\
+        .main-header \{\
+            display: flex;\
+            justify-content: space-between;\
+            align-items: center;\
+            padding: 20px 0;\
+            border-bottom: 1px solid #eee;\
+        \}\
+\
+        .logo \{\
+            font-family: var(--font-title);\
+            font-size: 2rem;\
+            font-weight: 700;\
+        \}\
+\
+        .main-nav ul \{\
+            list-style: none;\
+            display: flex;\
+            gap: 25px;\
+        \}\
+\
+        .header-icons \{\
+            display: flex;\
+            gap: 20px;\
+        \}\
+\
+        .header-icons svg \{\
+            width: 24px;\
+            height: 24px;\
+        \}\
+\
+        /* --- Section H\'e9ros (Banni\'e8re Principale) --- */\
+        .hero \{\
+            height: 85vh;\
+            background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1610652492515-0b4a45a1f64c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600');\
+            background-size: cover;\
+            background-position: center;\
+            display: flex;\
+            justify-content: center;\
+            align-items: center;\
+            text-align: center;\
+            color: white;\
+        \}\
+\
+        .hero-content h1 \{\
+            font-size: 3.5rem;\
+            margin-bottom: 20px;\
+        \}\
+\
+        .cta-button \{\
+            display: inline-block;\
+            background-color: var(--color-primary);\
+            color: white;\
+            padding: 12px 30px;\
+            font-size: 1rem;\
+            font-weight: 500;\
+            border: none;\
+            cursor: pointer;\
+            transition: background-color 0.3s ease;\
+        \}\
+\
+        .cta-button:hover \{\
+            background-color: #c06c4c;\
+            color: white;\
+        \}\
+        \
+        /* --- Section "Nouveaut\'e9s" --- */\
+        .section \{\
+            padding: 80px 0;\
+            text-align: center;\
+        \}\
+        \
+        .section-title \{\
+            font-size: 2.5rem;\
+            margin-bottom: 40px;\
+        \}\
+\
+        .product-grid \{\
+            display: grid;\
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\
+            gap: 30px;\
+        \}\
+\
+        .product-card \{\
+            text-align: left;\
+        \}\
+\
+        .product-card img \{\
+            width: 100%;\
+            height: auto;\
+            object-fit: cover;\
+            aspect-ratio: 3/4;\
+            margin-bottom: 15px;\
+        \}\
+        \
+        .product-card h3 \{\
+            font-family: var(--font-body);\
+            font-size: 1rem;\
+            font-weight: 500;\
+        \}\
+        \
+        .product-price \{\
+            font-weight: 700;\
+            color: var(--color-primary);\
+        \}\
+\
+        /* --- Section Lookbook --- */\
+        .lookbook \{\
+            background-color: #F7F2EC; /* Un beige un peu plus chaud */\
+            display: flex;\
+            align-items: center;\
+            gap: 50px;\
+        \}\
+\
+        .lookbook .container \{\
+            display: flex;\
+            align-items: center;\
+            gap: 50px;\
+        \}\
+\
+        .lookbook-image, .lookbook-content \{\
+            flex: 1;\
+        \}\
+        \
+        .lookbook-image img \{\
+            width: 100%;\
+            height: auto;\
+        \}\
+\
+        .lookbook-content \{\
+            text-align: left;\
+        \}\
+        \
+        .lookbook-content h2 \{\
+            font-size: 2.5rem;\
+            margin-bottom: 20px;\
+        \}\
+        \
+        .lookbook-content p \{\
+            margin-bottom: 30px;\
+        \}\
+\
+        /* --- Pied de Page (Footer) --- */\
+        .main-footer \{\
+            background-color: #EAE5E0;\
+            padding: 60px 0;\
+        \}\
+        \
+        .footer-grid \{\
+            display: grid;\
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\
+            gap: 40px;\
+        \}\
+        \
+        .footer-column h4 \{\
+            font-family: var(--font-body);\
+            font-weight: 700;\
+            margin-bottom: 15px;\
+        \}\
+        \
+        .footer-column ul \{\
+            list-style: none;\
+        \}\
+        \
+        .footer-column ul li \{\
+            margin-bottom: 10px;\
+        \}\
+        \
+        .newsletter-form input \{\
+            width: 100%;\
+            padding: 10px;\
+            border: 1px solid #ccc;\
+            margin-bottom: 10px;\
+        \}\
+        \
+        .newsletter-form button \{\
+            width: 100%;\
+            background-color: var(--color-text);\
+            color: white;\
+            padding: 10px;\
+            border: none;\
+            cursor: pointer;\
+        \}\
+        \
+        /* --- Responsive Design --- */\
+        @media (max-width: 768px) \{\
+            .main-nav \{\
+                display: none; /* Simplification pour mobile, un vrai site aurait un menu burger */\
+            \}\
+            .hero-content h1 \{\
+                font-size: 2.5rem;\
+            \}\
+            .lookbook .container \{\
+                flex-direction: column;\
+            \}\
+        \}\
+\
+    </style>\
+</head>\
+<body>\
+\
+    <!-- ======================= EN-T\'caTE ======================= -->\
+    <header class="main-header container">\
+        <a href="#" class="logo">Tifawinee</a>\
+        <nav class="main-nav">\
+            <ul>\
+                <li><a href="#">Nouveaut\'e9s</a></li>\
+                <li><a href="#">Abayas</a></li>\
+                <li><a href="#">Robes</a></li>\
+                <li><a href="#">Collections</a></li>\
+                <li><a href="#">Notre Histoire</a></li>\
+            </ul>\
+        </nav>\
+        <div class="header-icons">\
+            <a href="#">\
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>\
+            </a>\
+            <a href="#">\
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>\
+            </a>\
+            <a href="#">\
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.658-.463 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" /></svg>\
+            </a>\
+        </div>\
+    </header>\
+\
+    <main>\
+        <!-- ======================= SECTION H\'c9ROS ======================= -->\
+        <section class="hero">\
+            <div class="hero-content">\
+                <h1>La modestie rencontre le style</h1>\
+                <p>D\'e9couvrez nos collections uniques, con\'e7ues pour la femme moderne.</p>\
+                <a href="#" class="cta-button">D\'e9couvrir la nouvelle collection</a>\
+            </div>\
+        </section>\
+\
+        <!-- ======================= NOUVEAUT\'c9S ======================= -->\
+        <section class="section container">\
+            <h2 class="section-title">Fra\'eechement Arriv\'e9</h2>\
+            <div class="product-grid">\
+                <!-- Produit 1 -->\
+                <div class="product-card">\
+                    <img src="https://images.unsplash.com/photo-1628146438018-038b3a7b76ac?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1800" alt="Abaya \'c9l\'e9gante">\
+                    <h3>Abaya 'Nour' en Cr\'eape de Soie</h3>\
+                    <p class="product-price">129,00 \'80</p>\
+                </div>\
+                <!-- Produit 2 -->\
+                <div class="product-card">\
+                    <img src="https://images.unsplash.com/photo-1598897048126-945b8543452d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1800" alt="Robe en lin">\
+                    <h3>Robe Longue 'Amal' en Lin</h3>\
+                    <p class="product-price">89,00 \'80</p>\
+                </div>\
+                <!-- Produit 3 -->\
+                <div class="product-card">\
+                    <img src="https://images.unsplash.com/photo-1596499879796-039c4f42ce08?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1800" alt="Kimono moderne">\
+                    <h3>Kimono Ouvert 'Sahar'</h3>\
+                    <p class="product-price">99,00 \'80</p>\
+                </div>\
+                <!-- Produit 4 -->\
+                <div class="product-card">\
+                    <img src="https://images.unsplash.com/photo-1543336587-4f54519c5b60?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1800" alt="Ensemble jupe et haut">\
+                    <h3>Ensemble 'Dania' Jupe Pliss\'e9e</h3>\
+                    <p class="product-price">149,00 \'80</p>\
+                </div>\
+            </div>\
+        </section>\
+\
+        <!-- ======================= LOOKBOOK ======================= -->\
+        <section class="section lookbook">\
+            <div class="container">\
+                <div class="lookbook-image">\
+                    <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600" alt="Femme portant des v\'eatements \'e9l\'e9gants">\
+                </div>\
+                <div class="lookbook-content">\
+                    <h2>Inspiration de Saison</h2>\
+                    <p>Chaque pi\'e8ce de notre collection est pens\'e9e pour allier confort, pudeur et tendances actuelles. Des tissus nobles, des coupes fluides et des d\'e9tails raffin\'e9s pour sublimer votre quotidien.</p>\
+                    <a href="#" class="cta-button">Voir le Lookbook</a>\
+                </div>\
+            </div>\
+        </section>\
+    </main>\
+\
+    <!-- ======================= PIED DE PAGE ======================= -->\
+    <footer class="main-footer">\
+        <div class="container footer-grid">\
+            <div class="footer-column">\
+                <h4>Service Client</h4>\
+                <ul>\
+                    <li><a href="#">Nous Contacter</a></li>\
+                    <li><a href="#">FAQ</a></li>\
+                    <li><a href="#">Suivi de Commande</a></li>\
+                    <li><a href="#">Livraisons & Retours</a></li>\
+                </ul>\
+            </div>\
+            <div class="footer-column">\
+                <h4>\'c0 Propos</h4>\
+                <ul>\
+                    <li><a href="#">Notre Histoire</a></li>\
+                    <li><a href="#">Nos Engagements</a></li>\
+                    <li><a href="#">Guide des Tailles</a></li>\
+                </ul>\
+            </div>\
+            <div class="footer-column">\
+                <h4>Suivez-nous</h4>\
+                <ul>\
+                    <li><a href="#">Instagram</a></li>\
+                    <li><a href="#">Pinterest</a></li>\
+                    <li><a href="#">Facebook</a></li>\
+                </ul>\
+            </div>\
+            <div class="footer-column">\
+                <h4>Restez Inform\'e9e</h4>\
+                <p>Recevez nos nouveaut\'e9s et offres exclusives.</p>\
+                <form class="newsletter-form">\
+                    <input type="email" placeholder="Votre adresse e-mail">\
+                    <button type="submit">S'inscrire</button>\
+                </form>\
+            </div>\
+        </div>\
+    </footer>\
+\
+</body>\
+</html>}
