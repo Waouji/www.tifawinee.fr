@@ -4,86 +4,178 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tifawinee — Abayas & vêtements modestes</title>
-  <meta name="description" content="Abayas, robes et hijabs élégants pour femmes musulmanes. Qualité, confort et style. Livraison rapide en France et Tunisie. Tifawinee.">
+  <meta name="description" content="Tifawinee : Abayas, robes, jilbabs et hijabs élégants pour femmes musulmanes. Qualité, confort, pudeur. Livraison France & Tunisie. Commande par WhatsApp.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧕</text></svg>">
+  <!-- Tailwind CDN (pas de build nécessaire) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"] },
+          colors: { brand: { 50:"#f5f7fb",100:"#e9eef6",200:"#cfdaf0",300:"#a9c0e6",400:"#7a9ad6",500:"#4f73c3",600:"#3f5ca1",700:"#344b81",800:"#2b3f6a",900:"#24365a" } }
+        }
+      }
+    }
+  </script>
   <style>
-    :root { --max: 1100px; }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.5; color:#1b1b1b; }
-    header { padding:14px 20px; border-bottom:1px solid #eee; display:flex; gap:12px; align-items:center; justify-content:space-between; }
-    header nav a { text-decoration:none; margin:0 8px; color:#333; }
-    .wrap { max-width:var(--max); margin:0 auto; padding:20px; }
-    .hero { display:grid; gap:18px; padding:40px 0; align-items:center; }
-    .hero h1 { font-size: clamp(28px, 5vw, 42px); margin:0; }
-    .hero p { margin:0; color:#444; }
-    .cta { display:inline-block; padding:12px 18px; border-radius:10px; background:#111; color:#fff; text-decoration:none; margin-top:14px; }
-    .grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-    .card { border:1px solid #eee; border-radius:12px; overflow:hidden; background:#fff; }
-    .card img { width:100%; height:260px; object-fit:cover; display:block; }
-    .card .p { padding:12px; }
-    footer { border-top:1px solid #eee; padding:22px; text-align:center; color:#666; }
-    .badge { font-size:12px; padding:4px 8px; border:1px solid #ddd; border-radius:999px; display:inline-block; margin-right:8px; }
+    /* Ombres douces */
+    .soft { box-shadow: 0 8px 30px rgba(0,0,0,.07); }
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,.75); }
   </style>
 </head>
-<body>
-  <header class="wrap">
-    <strong>Tifawinee</strong>
-    <nav>
-      <a href="#collection">Collection</a>
-      <a href="#tailles">Tailles</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<body class="font-sans text-slate-800 bg-slate-50">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/90 glass">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold tracking-tight">Tifawinee</a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#catalogue" class="hover:text-brand-700">Collection</a>
+        <a href="#tailles" class="hover:text-brand-700">Tailles</a>
+        <a href="#contact" class="hover:text-brand-700">Contact</a>
+      </nav>
+      <a href="https://wa.me/33600000000" target="_blank" class="inline-flex items-center rounded-xl bg-brand-700 px-4 py-2 text-white hover:bg-brand-800 transition">
+        Commander
+      </a>
+    </div>
   </header>
 
-  <main class="wrap">
-    <section class="hero">
+  <!-- Hero -->
+  <section class="mx-auto max-w-7xl px-4 pt-10 pb-8">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
       <div>
-        <h1>Abayas & vêtements modestes <br> élégants du quotidien</h1>
-        <p>Qualité des tissus, coupes fluides et confort. Expédition France & Tunisie.</p>
-        <!-- Remplace le numéro WhatsApp -->
-        <a class="cta" href="https://wa.me/33600000000" target="_blank" rel="noopener">Commander par WhatsApp</a>
-        <div style="margin-top:10px;">
-          <span class="badge">Abayas</span>
-          <span class="badge">Robes</span>
-          <span class="badge">Hijabs</span>
-          <span class="badge">Jilbabs</span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight">
+          Abayas & vêtements modestes<br class="hidden sm:block"> élégants du quotidien
+        </h1>
+        <p class="mt-3 text-slate-600">Coupes fluides, matières sélectionnées et finitions soignées. Expédition France & Tunisie.</p>
+        <div class="mt-5 flex gap-3">
+          <a href="#catalogue" class="rounded-xl bg-slate-900 text-white px-5 py-3 hover:bg-slate-800 transition">Voir la collection</a>
+          <a href="https://wa.me/33600000000" target="_blank" class="rounded-xl border border-slate-300 px-5 py-3 hover:bg-white transition">Commander par WhatsApp</a>
+        </div>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="text-xs px-3 py-1 rounded-full bg-white border">Abayas</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-white border">Robes</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-white border">Jilbabs</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-white border">Hijabs</span>
         </div>
       </div>
-    </section>
-
-    <section id="collection">
-      <h2>Nouvelle collection</h2>
-      <div class="grid">
-        <article class="card">
-          <img src="https://picsum.photos/seed/abaya1/800/600" alt="Abaya noire élégante">
-          <div class="p"><strong>Abaya Classique</strong><br><small>Noir • du 34 au 50</small></div>
-        </article>
-        <article class="card">
-          <img src="https://picsum.photos/seed/abaya2/800/600" alt="Abaya beige">
-          <div class="p"><strong>Abaya Crêpe</strong><br><small>Beige • du 36 au 52</small></div>
-        </article>
-        <article class="card">
-          <img src="https://picsum.photos/seed/jilbab1/800/600" alt="Jilbab deux pièces">
-          <div class="p"><strong>Jilbab 2 pièces</strong><br><small>Plusieurs coloris</small></div>
-        </article>
-        <article class="card">
-          <img src="https://picsum.photos/seed/hijab1/800/600" alt="Hijab mousseline">
-          <div class="p"><strong>Hijab Mousseline</strong><br><small>Couleurs variées</small></div>
-        </article>
+      <div class="rounded-3xl overflow-hidden soft">
+        <img src="https://images.unsplash.com/photo-1520974859131-5a6a1c01f27c?q=80&w=1400&auto=format&fit=crop" alt="Collection Tifawinee" class="w-full h-[320px] object-cover">
       </div>
-      <p style="margin-top:10px"><em>Astuce :</em> remplace les images par tes photos produit (dossier <code>/assets</code>).</p>
-    </section>
+    </div>
+  </section>
 
-    <section id="tailles" class="wrap">
-      <h2>Guide des tailles</h2>
-      <p>Coupe ample et fluide. Si tu hésites entre deux tailles, choisis la plus grande.</p>
-    </section>
+  <!-- Filtres + Catalogue -->
+  <section id="catalogue" class="mx-auto max-w-7xl px-4 pb-14">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+      <h2 class="text-2xl font-bold">Nouvelle collection</h2>
+      <div class="flex gap-2">
+        <button data-filter="all" class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Tout</button>
+        <button data-filter="abaya" class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Abayas</button>
+        <button data-filter="robe" class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Robes</button>
+        <button data-filter="jilbab" class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Jilbabs</button>
+        <button data-filter="hijab" class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Hijabs</button>
+      </div>
+    </div>
 
-    <section id="contact" class="wrap">
-      <h2>Contact</h2>
-      <p>Email : <a href="mailto:contact@tifawinee.fr">contact@tifawinee.fr</a> — WhatsApp : <a href="https://wa.me/33600000000" target="_blank" rel="noopener">+33 6 00 00 00 00</a></p>
-    </section>
-  </main>
+    <div id="grid" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+    <p class="mt-3 text-sm text-slate-500">Astuce : remplace les photos par tes images (place-les dans <code>/assets</code> et modifie <code>products.js</code>).</p>
+  </section>
 
-  <footer>© Tifawinee — Tous droits réservés</footer>
+  <!-- Tailles -->
+  <section id="tailles" class="mx-auto max-w-7xl px-4 pb-14">
+    <div class="rounded-2xl bg-white border soft p-6">
+      <h2 class="text-2xl font-bold mb-2">Guide des tailles</h2>
+      <p class="text-slate-600 mb-4">Coupe ample et fluide. Si tu hésites entre deux tailles, choisis la plus grande.</p>
+      <div class="grid sm:grid-cols-3 gap-4 text-sm">
+        <div class="p-4 border rounded-xl">
+          <div class="font-semibold mb-1">Abayas</div>
+          <p>34–52 • Longueurs 135/140 cm</p>
+        </div>
+        <div class="p-4 border rounded-xl">
+          <div class="font-semibold mb-1">Robes</div>
+          <p>XS–XXL • Coupe évasée</p>
+        </div>
+        <div class="p-4 border rounded-xl">
+          <div class="font-semibold mb-1">Jilbabs/Hijabs</div>
+          <p>Taille unique • Plusieurs coloris</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="mx-auto max-w-7xl px-4 pb-20">
+    <div class="rounded-2xl bg-white border soft p-6">
+      <h2 class="text-2xl font-bold mb-2">Contact</h2>
+      <p class="text-slate-600">Email : <a class="underline" href="mailto:contact@tifawinee.fr">contact@tifawinee.fr</a></p>
+      <p class="text-slate-600">WhatsApp : <a class="underline" href="https://wa.me/33600000000" target="_blank">+33 6 00 00 00 00</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-8 text-sm text-slate-500 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+      <span>© <span id="y"></span> Tifawinee — Tous droits réservés</span>
+      <div class="flex gap-4">
+        <a href="#catalogue" class="hover:text-slate-700">Collection</a>
+        <a href="#tailles" class="hover:text-slate-700">Tailles</a>
+        <a href="#contact" class="hover:text-slate-700">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bouton WhatsApp flottant -->
+  <a href="https://wa.me/33600000000" target="_blank" class="fixed bottom-4 right-4 md:bottom-6 md:right-6 rounded-full bg-green-500 text-white p-4 soft hover:bg-green-600 transition" aria-label="Commander sur WhatsApp">
+    <!-- icône -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.01 0C5.4 0 .02 5.38.02 12a11.9 11.9 0 0 0 1.63 6L0 24l6.17-1.61A11.97 11.97 0 0 0 12 24c6.62 0 12-5.38 12-12 0-3.2-1.25-6.21-3.48-8.52Zm-8.51 18.1c-1.91 0-3.79-.51-5.43-1.47l-.39-.23-3.67.96.98-3.57-.25-.37A9.93 9.93 0 0 1 2.02 12C2.02 6.49 6.5 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.93 9.93 0 0 1 22 12c0 5.51-4.48 9.99-9.99 9.99Zm5.7-7.47c-.3-.15-1.8-.89-2.08-.99-.28-.1-.48-.15-.68.14-.2.29-.78.99-.96 1.2-.18.21-.36.23-.66.08-.3-.15-1.26-.46-2.4-1.46-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.51.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.68-1.64-.93-2.25-.25-.6-.5-.52-.68-.53l-.58-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.06 2.9 1.21 3.1.15.2 2.09 3.2 5.06 4.49.71.31 1.27.49 1.71.63.72.23 1.38.2 1.9.12.58-.09 1.8-.74 2.06-1.46.26-.72.26-1.34.18-1.46-.08-.12-.27-.2-.57-.35Z"/></svg>
+  </a>
+
+  <!-- Données produits + rendu -->
+  <script src="products.js"></script>
+  <script>
+    // année footer
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // rendu produits
+    const grid = document.getElementById("grid");
+    let currentFilter = "all";
+
+    function render(products) {
+      grid.innerHTML = "";
+      products
+        .filter(p => currentFilter === "all" ? true : p.category === currentFilter)
+        .forEach(p => {
+          const card = document.createElement("article");
+          card.className = "bg-white border rounded-2xl overflow-hidden soft flex flex-col";
+          card.innerHTML = `
+            <img src="${p.image}" alt="${p.title}" class="w-full h-56 object-cover">
+            <div class="p-4 flex-1 flex flex-col">
+              <h3 class="font-semibold">${p.title}</h3>
+              <p class="text-sm text-slate-600 mt-1">${p.subtitle}</p>
+              <div class="mt-auto flex items-center justify-between pt-3">
+                <span class="font-semibold">${p.price}</span>
+                <a class="text-sm underline hover:no-underline" target="_blank"
+                   href="https://wa.me/33600000000?text=${encodeURIComponent("Bonjour, je veux commander : " + p.title + " (" + p.price + ")")}">
+                  Commander
+                </a>
+              </div>
+            </div>`;
+          grid.appendChild(card);
+        });
+    }
+
+    // filtres
+    document.querySelectorAll(".filter-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("bg-slate-900","text-white"));
+        btn.classList.add("bg-slate-900","text-white");
+        currentFilter = btn.dataset.filter;
+        render(PRODUCTS);
+      });
+    });
+
+    render(PRODUCTS);
+  </script>
 </body>
 </html>
