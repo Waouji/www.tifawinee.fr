@@ -6,22 +6,20 @@
   <title>Tifawinee — Abayas & vêtements modestes</title>
   <meta name="description" content="Tifawinee : Abayas, robes, jilbabs et hijabs élégants pour femmes musulmanes. Qualité, confort, pudeur. Livraison France & Tunisie. Commande par WhatsApp.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧕</text></svg>">
-  <!-- Tailwind CDN (pas de build nécessaire) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"] },
+          fontFamily: { sans: ["Inter","ui-sans-serif","system-ui","sans-serif"] },
           colors: { brand: { 50:"#f5f7fb",100:"#e9eef6",200:"#cfdaf0",300:"#a9c0e6",400:"#7a9ad6",500:"#4f73c3",600:"#3f5ca1",700:"#344b81",800:"#2b3f6a",900:"#24365a" } }
         }
       }
     }
   </script>
   <style>
-    /* Ombres douces */
-    .soft { box-shadow: 0 8px 30px rgba(0,0,0,.07); }
-    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,.75); }
+    .soft{ box-shadow:0 8px 30px rgba(0,0,0,.07) }
+    .glass{ backdrop-filter:blur(8px); background:rgba(255,255,255,.75) }
   </style>
 </head>
 <body class="font-sans text-slate-800 bg-slate-50">
@@ -34,9 +32,15 @@
         <a href="#tailles" class="hover:text-brand-700">Tailles</a>
         <a href="#contact" class="hover:text-brand-700">Contact</a>
       </nav>
-      <a href="https://wa.me/33600000000" target="_blank" class="inline-flex items-center rounded-xl bg-brand-700 px-4 py-2 text-white hover:bg-brand-800 transition">
-        Commander
-      </a>
+      <div class="flex items-center gap-3">
+        <button id="openCart" class="relative rounded-xl border px-4 py-2 hover:bg-white transition">
+          Panier
+          <span data-cart-badge class="hidden absolute -right-2 -top-2 text-xs bg-slate-900 text-white rounded-full px-1.5 py-0.5">0</span>
+        </button>
+        <a href="https://wa.me/33600000000" target="_blank" class="inline-flex items-center rounded-xl bg-brand-700 px-4 py-2 text-white hover:bg-brand-800 transition">
+          WhatsApp
+        </a>
+      </div>
     </div>
   </header>
 
@@ -70,16 +74,16 @@
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
       <h2 class="text-2xl font-bold">Nouvelle collection</h2>
       <div class="flex gap-2">
-        <button data-filter="all" class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Tout</button>
+        <button data-filter="all"   class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Tout</button>
         <button data-filter="abaya" class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Abayas</button>
-        <button data-filter="robe" class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Robes</button>
-        <button data-filter="jilbab" class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Jilbabs</button>
+        <button data-filter="robe"  class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Robes</button>
+        <button data-filter="jilbab"class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Jilbabs</button>
         <button data-filter="hijab" class="filter-btn rounded-xl border px-3 py-1.5 text-sm bg-white">Hijabs</button>
       </div>
     </div>
 
     <div id="grid" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
-    <p class="mt-3 text-sm text-slate-500">Astuce : remplace les photos par tes images (place-les dans <code>/assets</code> et modifie <code>products.js</code>).</p>
+    <p class="mt-3 text-sm text-slate-500">Astuce : remplace les photos par tes images (place-les dans <code>/assets</code> et édite les produits dans le script en bas).</p>
   </section>
 
   <!-- Tailles -->
@@ -125,56 +129,211 @@
     </div>
   </footer>
 
-  <!-- Bouton WhatsApp flottant -->
-  <a href="https://wa.me/33600000000" target="_blank" class="fixed bottom-4 right-4 md:bottom-6 md:right-6 rounded-full bg-green-500 text-white p-4 soft hover:bg-green-600 transition" aria-label="Commander sur WhatsApp">
-    <!-- icône -->
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.01 0C5.4 0 .02 5.38.02 12a11.9 11.9 0 0 0 1.63 6L0 24l6.17-1.61A11.97 11.97 0 0 0 12 24c6.62 0 12-5.38 12-12 0-3.2-1.25-6.21-3.48-8.52Zm-8.51 18.1c-1.91 0-3.79-.51-5.43-1.47l-.39-.23-3.67.96.98-3.57-.25-.37A9.93 9.93 0 0 1 2.02 12C2.02 6.49 6.5 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.93 9.93 0 0 1 22 12c0 5.51-4.48 9.99-9.99 9.99Zm5.7-7.47c-.3-.15-1.8-.89-2.08-.99-.28-.1-.48-.15-.68.14-.2.29-.78.99-.96 1.2-.18.21-.36.23-.66.08-.3-.15-1.26-.46-2.4-1.46-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.51.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.68-1.64-.93-2.25-.25-.6-.5-.52-.68-.53l-.58-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.06 2.9 1.21 3.1.15.2 2.09 3.2 5.06 4.49.71.31 1.27.49 1.71.63.72.23 1.38.2 1.9.12.58-.09 1.8-.74 2.06-1.46.26-.72.26-1.34.18-1.46-.08-.12-.27-.2-.57-.35Z"/></svg>
-  </a>
+  <!-- POPUP PANIER -->
+  <div id="cartModal" class="fixed inset-0 hidden">
+    <div class="absolute inset-0 bg-black/40" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-3xl bg-white rounded-2xl soft mt-10 md:mt-20 overflow-hidden">
+      <div class="flex items-center justify-between px-5 py-4 border-b">
+        <h3 class="text-lg font-semibold">Mon panier</h3>
+        <button id="closeCart" class="rounded-lg px-2 py-1 hover:bg-slate-100">✕</button>
+      </div>
+      <div class="p-4">
+        <div id="empty" class="hidden rounded-xl border bg-white p-6 text-slate-600">
+          Votre panier est vide. <a class="underline" href="#catalogue" id="closeAndShop">Voir la collection</a>.
+        </div>
 
-  <!-- Données produits + rendu -->
-  <script src="products.js"></script>
+        <div id="cartBox" class="rounded-xl border bg-white overflow-hidden hidden">
+          <table class="w-full text-sm">
+            <thead class="bg-slate-100">
+              <tr>
+                <th class="text-left p-3">Produit</th>
+                <th class="text-left p-3">Prix</th>
+                <th class="text-left p-3">Qté</th>
+                <th class="text-left p-3">Sous-total</th>
+                <th class="p-3"></th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+          <div class="flex items-center justify-between p-4 border-t">
+            <button id="clear" class="text-sm underline">Vider le panier</button>
+            <div class="text-right">
+              <div class="text-slate-600 text-sm">Total</div>
+              <div id="total" class="text-xl font-semibold">—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+          <button id="continue" class="rounded-xl border px-4 py-2 bg-white">← Continuer mes achats</button>
+          <button id="wa" class="rounded-xl bg-green-600 text-white px-4 py-2 hover:bg-green-700">Commander sur WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS : Produits + Panier + Rendu -->
   <script>
-    // année footer
-    document.getElementById("y").textContent = new Date().getFullYear();
+    // ------------ CONFIG ------------
+    const WHATSAPP_NUMBER = "33600000000"; // ← remplace par ton numéro (international, sans +)
 
-    // rendu produits
-    const grid = document.getElementById("grid");
-    let currentFilter = "all";
+    // ------------ DONNÉES PRODUITS (modifie ici) ------------
+    const PRODUCTS = [
+      { id:"abaya-classique",  title:"Abaya Classique",       subtitle:"Noir • du 34 au 50", price:"49,00 €", category:"abaya", image:"https://images.unsplash.com/photo-1532767153582-b1a0e5145009?q=80&w=1200&auto=format&fit=crop" },
+      { id:"abaya-crepe",      title:"Abaya Crêpe Premium",   subtitle:"Beige • du 36 au 52", price:"59,00 €", category:"abaya", image:"https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1200&auto=format&fit=crop" },
+      { id:"robe-evasee",      title:"Robe Évasée",           subtitle:"S-XXL • 4 coloris",   price:"39,00 €", category:"robe",  image:"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop" },
+      { id:"jilbab-2p",        title:"Jilbab 2 pièces",       subtitle:"Taille unique",       price:"45,00 €", category:"jilbab",image:"https://images.unsplash.com/photo-1544717305-996b815c338c?q=80&w=1200&auto=format&fit=crop" },
+      { id:"hijab-mousseline", title:"Hijab Mousseline",      subtitle:"Couleurs variées",    price:"12,00 €", category:"hijab", image:"https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop" },
+      { id:"abaya-satin",      title:"Abaya Satin",           subtitle:"Vert olive • 34–48",  price:"65,00 €", category:"abaya", image:"https://images.unsplash.com/photo-1520975891768-1c1ef2d7f2c6?q=80&w=1200&auto=format&fit=crop" }
+    ];
 
-    function render(products) {
-      grid.innerHTML = "";
-      products
-        .filter(p => currentFilter === "all" ? true : p.category === currentFilter)
-        .forEach(p => {
-          const card = document.createElement("article");
-          card.className = "bg-white border rounded-2xl overflow-hidden soft flex flex-col";
-          card.innerHTML = `
-            <img src="${p.image}" alt="${p.title}" class="w-full h-56 object-cover">
-            <div class="p-4 flex-1 flex flex-col">
-              <h3 class="font-semibold">${p.title}</h3>
-              <p class="text-sm text-slate-600 mt-1">${p.subtitle}</p>
-              <div class="mt-auto flex items-center justify-between pt-3">
-                <span class="font-semibold">${p.price}</span>
-                <a class="text-sm underline hover:no-underline" target="_blank"
-                   href="https://wa.me/33600000000?text=${encodeURIComponent("Bonjour, je veux commander : " + p.title + " (" + p.price + ")")}">
-                  Commander
-                </a>
-              </div>
-            </div>`;
-          grid.appendChild(card);
-        });
+    // ------------ PANIER (localStorage) ------------
+    const CART_KEY = "tifawinee_cart_v1";
+    const lsGet = k => { try{ return JSON.parse(localStorage.getItem(k))||[] }catch{ return [] } };
+    const lsSet = (k,v) => localStorage.setItem(k, JSON.stringify(v));
+
+    function loadCart(){ return lsGet(CART_KEY); }
+    function saveCart(c){ lsSet(CART_KEY,c); updateCartBadge(); }
+    function addToCart(p,qty=1){
+      const c=loadCart(); const i=c.findIndex(x=>x.id===p.id);
+      if(i>=0) c[i].qty+=qty; else c.push({id:p.id,title:p.title,price:p.price,image:p.image,qty});
+      saveCart(c);
+    }
+    function removeFromCart(id){ saveCart(loadCart().filter(i=>i.id!==id)); }
+    function setQty(id,qty){ const c=loadCart(); const it=c.find(i=>i.id===id); if(!it) return; it.qty=Math.max(1,qty|0); saveCart(c); }
+    function clearCart(){ saveCart([]); }
+    function cartCount(){ return loadCart().reduce((n,i)=>n+i.qty,0); }
+    function parsePrice(p){ const n=(p+"").replace(/[^\d,.-]/g,"").replace(",","."); return parseFloat(n||"0"); }
+    function formatPrice(n){ return new Intl.NumberFormat("fr-FR",{style:"currency",currency:"EUR"}).format(n); }
+    function cartTotal(){ return loadCart().reduce((s,i)=>s+parsePrice(i.price)*i.qty,0); }
+    function updateCartBadge(){
+      const el=document.querySelector("[data-cart-badge]");
+      if(!el) return; const n=cartCount(); el.textContent=n; el.classList.toggle("hidden", n===0);
+    }
+    function buildWhatsAppText(){
+      const c=loadCart(); if(!c.length) return "Bonjour, je souhaite passer une commande.";
+      const lines=["Salam/Bonjour, je souhaite commander :",""];
+      c.forEach((i,k)=>lines.push(`${k+1}. ${i.title} ×${i.qty} — ${i.price}`));
+      lines.push("",`Total : ${formatPrice(cartTotal())}`,"","Nom :","Adresse de livraison :","Téléphone :");
+      return lines.join("\n");
+    }
+    function openWhatsAppWithCart(){
+      const txt=encodeURIComponent(buildWhatsAppText());
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${txt}`,"_blank");
     }
 
-    // filtres
-    document.querySelectorAll(".filter-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("bg-slate-900","text-white"));
+    // ------------ RENDU CATALOGUE ------------
+    const grid=document.getElementById("grid");
+    let currentFilter="all";
+    function render(products){
+      grid.innerHTML="";
+      products.filter(p=>currentFilter==="all" ? true : p.category===currentFilter).forEach(p=>{
+        const card=document.createElement("article");
+        card.className="bg-white border rounded-2xl overflow-hidden soft flex flex-col";
+        card.innerHTML=`
+          <img src="${p.image}" alt="${p.title}" class="w-full h-56 object-cover">
+          <div class="p-4 flex-1 flex flex-col">
+            <h3 class="font-semibold">${p.title}</h3>
+            <p class="text-sm text-slate-600 mt-1">${p.subtitle}</p>
+            <div class="mt-auto flex items-center justify-between pt-3 gap-2">
+              <span class="font-semibold">${p.price}</span>
+              <div class="flex gap-2">
+                <button class="add-btn rounded-xl bg-slate-900 text-white px-3 py-1.5 text-sm hover:bg-slate-800" data-id="${p.id}">Ajouter</button>
+                <a class="text-sm underline hover:no-underline" target="_blank"
+                   href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Bonjour, je veux "+p.title+" ("+p.price+")")}">
+                  Achat direct
+                </a>
+              </div>
+            </div>
+          </div>`;
+        grid.appendChild(card);
+      });
+      document.querySelectorAll(".add-btn").forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+          const id=btn.getAttribute("data-id");
+          const prod=PRODUCTS.find(x=>x.id===id);
+          if(prod){ addToCart(prod,1); btn.textContent="Ajouté ✓"; setTimeout(()=>btn.textContent="Ajouter",900); }
+        });
+      });
+    }
+
+    // ------------ FILTRES ------------
+    document.querySelectorAll(".filter-btn").forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("bg-slate-900","text-white"));
         btn.classList.add("bg-slate-900","text-white");
-        currentFilter = btn.dataset.filter;
-        render(PRODUCTS);
+        currentFilter=btn.dataset.filter; render(PRODUCTS);
       });
     });
 
+    // ------------ POPUP PANIER ------------
+    const cartModal=document.getElementById("cartModal");
+    const openCart=document.getElementById("openCart");
+    const closeCart=document.getElementById("closeCart");
+    const continueBtn=document.getElementById("continue");
+    const closeAndShop=document.getElementById("closeAndShop");
+    const rows=document.getElementById("rows");
+    const empty=document.getElementById("empty");
+    const cartBox=document.getElementById("cartBox");
+    const totalEl=document.getElementById("total");
+    const waBtn=document.getElementById("wa");
+    const clearBtn=document.getElementById("clear");
+
+    function renderCart(){
+      const cart=loadCart();
+      if(!cart.length){
+        empty.classList.remove("hidden");
+        cartBox.classList.add("hidden");
+        totalEl.textContent="0 €";
+      }else{
+        empty.classList.add("hidden");
+        cartBox.classList.remove("hidden");
+        rows.innerHTML="";
+        cart.forEach(item=>{
+          const tr=document.createElement("tr");
+          const sub=parsePrice(item.price)*item.qty;
+          tr.className="border-b";
+          tr.innerHTML=`
+            <td class="p-3">
+              <div class="flex items-center gap-3">
+                <img src="${item.image}" class="w-14 h-14 object-cover rounded-lg border" alt="">
+                <div><div class="font-medium">${item.title}</div><div class="text-xs text-slate-500">${item.id}</div></div>
+              </div>
+            </td>
+            <td class="p-3">${item.price}</td>
+            <td class="p-3"><input data-qty="${item.id}" type="number" min="1" value="${item.qty}" class="w-16 rounded border px-2 py-1"></td>
+            <td class="p-3 font-medium">${formatPrice(sub)}</td>
+            <td class="p-3 text-right"><button data-del="${item.id}" class="text-sm text-red-600 hover:underline">Supprimer</button></td>
+          `;
+          rows.appendChild(tr);
+        });
+        totalEl.textContent=formatPrice(cartTotal());
+        rows.querySelectorAll("[data-qty]").forEach(input=>{
+          input.addEventListener("change",()=>{
+            setQty(input.getAttribute("data-qty"), parseInt(input.value,10));
+            renderCart();
+          });
+        });
+        rows.querySelectorAll("[data-del]").forEach(btn=>{
+          btn.addEventListener("click",()=>{ removeFromCart(btn.getAttribute("data-del")); renderCart(); });
+        });
+      }
+    }
+
+    function openCartModal(){ cartModal.classList.remove("hidden"); renderCart(); }
+    function closeCartModal(){ cartModal.classList.add("hidden"); }
+
+    openCart.addEventListener("click", openCartModal);
+    closeCart.addEventListener("click", closeCartModal);
+    continueBtn.addEventListener("click", closeCartModal);
+    if(closeAndShop) closeAndShop.addEventListener("click", closeCartModal);
+    clearBtn.addEventListener("click", ()=>{ clearCart(); renderCart(); });
+    waBtn.addEventListener("click", openWhatsAppWithCart);
+    document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeCartModal(); });
+
+    // ------------ INIT ------------
+    document.getElementById("y").textContent=new Date().getFullYear();
+    updateCartBadge();
     render(PRODUCTS);
   </script>
 </body>
