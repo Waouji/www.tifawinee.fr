@@ -1,9 +1,69 @@
-<!doctype html>
-<html lang="fr"><head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Test déploiement</title>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tifawinee</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f8f8; }
+    header { background: #111; color: white; padding: 20px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    .produits { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
+    .produit { background: white; margin: 10px; padding: 15px; border-radius: 8px; width: 220px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+    .produit img { width: 100%; border-radius: 5px; }
+    .btn { background: #25D366; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; display: inline-block; }
+    .btn:hover { background: #128C7E; }
+    #panier { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 12px 18px; border-radius: 50px; cursor: pointer; font-weight: bold; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  </style>
 </head>
-<body style="font-family:system-ui;margin:40px">
-  <h1>✅ Déploiement OK</h1>
-  <p>Si tu vois ce message, GitHub Pages sert bien du vrai HTML.</p>
-</body></html>
+<body>
+
+<header>
+  <h1>Bienvenue chez Tifawinee</h1>
+  <nav>
+    <a href="#">Nouveautés</a>
+    <a href="#">Abayas</a>
+    <a href="#">Robes</a>
+    <a href="#">Collections</a>
+    <a href="#">Notre Histoire</a>
+  </nav>
+</header>
+
+<section class="produits">
+  <div class="produit">
+    <img src="https://via.placeholder.com/200x250.png?text=Robe+1" alt="Robe 1">
+    <h3>Robe élégante</h3>
+    <p>Prix : 59€</p>
+    <button class="btn" onclick="ajouterAuPanier('Robe élégante - 59€')">Ajouter</button>
+  </div>
+
+  <div class="produit">
+    <img src="https://via.placeholder.com/200x250.png?text=Abaya" alt="Abaya">
+    <h3>Abaya classique</h3>
+    <p>Prix : 75€</p>
+    <button class="btn" onclick="ajouterAuPanier('Abaya classique - 75€')">Ajouter</button>
+  </div>
+</section>
+
+<div id="panier" onclick="envoyerPanier()">🛒 Panier (0)</div>
+
+<script>
+  let panier = [];
+
+  function ajouterAuPanier(article) {
+    panier.push(article);
+    document.getElementById('panier').innerText = `🛒 Panier (${panier.length})`;
+  }
+
+  function envoyerPanier() {
+    if(panier.length === 0) {
+      alert("Votre panier est vide !");
+      return;
+    }
+    let message = "Bonjour, je souhaite commander : %0A- " + panier.join("%0A- ");
+    window.open("https://wa.me/33612345678?text=" + message, "_blank");
+  }
+</script>
+
+</body>
+</html>
